@@ -1,0 +1,71 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+
+{% load static %}    
+    <!-- body sections  -->
+    <div class="container">
+        <div class="box-card12">
+            <div class="chart-key">
+                    <p><i class="fa fa-square" style="color:#594157;" aria-hidden="true"></i> Machine 1</p>
+                    <p><i class="fa fa-square" style="color:#726DA8;" aria-hidden="true"></i> Machine 2</p>
+                    <p><i class="fa fa-square" style="color:#7D8CC4;" aria-hidden="true"></i> Machine 3</p>
+                    <p><i class="fa fa-square" style="color:#A0D2DB;" aria-hidden="true"></i> Machine 4</p>
+                    <p><i class="fa fa-square" style="color:#BEE7E8;" aria-hidden="true"></i> Machine 5</p>
+            </div>
+        </div>
+        {% for employee in employee %}
+        <div class="box-card">
+            <div class="charts">
+                <div class="imgs"><img src="{{ employee.photo.url }}" alt="My image"></div>
+                <canvas id="{{ forloop.counter }}" width="100" height="100"></canvas>
+                <h5>{{ employee.full_name }}</h5>
+                <a href="{% url 'employee' employee.id  %}"><p>Employee</p></a>
+            </div>
+        </div>
+        <script>
+            var ctx = document.getElementById('{{ forloop.counter }}');
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Machine 1', 'Machine 2', 'Machine 3', 'Machine 4', 'Machine 5'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: ['{{ employee.machine_1 }}','{{ employee.machine_2 }}','{{ employee.machine_3 }}','{{ employee.machine_4 }}', '{{ employee.machine_5 }}'],
+                        backgroundColor: [
+                            '#594157',
+                            '#726DA8',
+                            '#7D8CC4',
+                            '#A0D2DB',
+                            '#BEE7E8',
+
+                        ],
+                        borderColor: [
+                           
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    legend:{
+                        display: false
+                    },
+                    tooltips: {
+                        mode: 'point'
+                    }
+                }
+            });
+        </script>
+        {% empty %}
+        <div class="nofound"
+            <h1>No employees found <i class="fas fa-sad-cry"></i></h1>
+        </div>
+        {% endfor %}
+        <div class="box-card12">
+            {% include 'partials/_pagination.html' %}
+        </div>
+        
+
+    </div>
+
+{% endblock content %}

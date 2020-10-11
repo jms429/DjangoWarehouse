@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div id="content">
+    <nav class="hamburger">
+      <button type="button" id="sidebarCollapse" class="btn btn-light">
+        <i class="fas fa-align-left"></i>
+      </button>
+    </nav>
+  </div>
+  <a class="brand" href="{% url 'index' %}"></a>
+  {% if user.is_authenticated %}
+    <div class="dropdown">
+      <span>
+        Weclome, Josh Frederick <i class="fas fa-caret-down"></i>
+      </span>
+      <div class="dropdown-content">
+        <p>
+          <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
+        </p>
+        <p>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Sign-out</a>
+        </p>
+      </div>
+    </div>
+    <img src="static/photos/bruce-campbell.jpg" class="rounded-circle mx-4 " height="40" alt="...">
+  {% else %}
+    <div class="dropdown">
+      <a href="{% url 'admin:index' %}">Admin Login   </a>
+    </div>
+  {% endif %}
+</nav>

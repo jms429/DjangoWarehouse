@@ -1,0 +1,191 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+
+{% load static %}    
+    <!-- body sections  -->
+    <div class="container">
+        <div class="box-card">
+            <div class="charts">
+                <h2 class="machine_title">Machine 1<a href="{% url 'machine_1' %}"><i class="fa fa-cogs" aria-hidden="true"></i></a></h2>
+                
+                <canvas id="1" width="100" height="100"></canvas>
+            </div>    
+        </div>
+    <script>
+        var ctx = document.getElementById('1').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'horizontalBar',
+            // The data for our dataset
+            data: {
+                labels: ['None', 'Beginner', 'Intermediate', 'Novice', 'Expert'],
+                datasets: [{
+                    label: '# of employees',
+                    backgroundColor: '#594157',
+                    borderColor: '#594157',
+                    data: [ '{{mach1_none}}' , '{{mach1_beginner}}', '{{mach1_inter}}', '{{mach1_novice}}', '{{mach1_expert}}']
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+    </script>
+    <!-- **********************next machine ******************************  -->
+    <div class="box-card">
+        <div class="charts">
+            <h2 class="machine_title">Machine 2<a href="{% url 'machine_2' %}"><i class="fa fa-cogs" aria-hidden="true"></i></a></h2>
+            <canvas id="2" width="100" height="100"></canvas>
+        </div>    
+    </div>
+<script>
+    var ctx = document.getElementById('2').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'horizontalBar',
+        // The data for our dataset
+        data: {
+            labels: ['None', 'Beginner', 'Intermediate', 'Novice', 'Expert'],
+            datasets: [{
+                label: '# of employees',
+                backgroundColor: ' #726DA8',
+                borderColor: ' #726DA8',
+                data: [ '{{mach2_none}}' , '{{mach2_beginner}}', '{{mach2_inter}}', '{{mach2_novice}}', '{{mach2_expert}}']
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+</script>
+<!-- **********************next machine ******************************  -->
+<div class="box-card">
+    <div class="charts">
+        <h2 class="machine_title">Machine 3<a href="{% url 'machine_3' %}"><i class="fa fa-cogs" aria-hidden="true"></i></a></h2>
+        <canvas id="3" width="100" height="100"></canvas>
+    </div>    
+</div>
+<script>
+var ctx = document.getElementById('3').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'horizontalBar',
+    // The data for our dataset
+    data: {
+        labels: ['None', 'Beginner', 'Intermediate', 'Novice', 'Expert'],
+        datasets: [{
+            label: '# of employees',
+            backgroundColor: '#7D8CC4',
+            borderColor: '#7D8CC4',
+            data: [ '{{mach3_none}}' , '{{mach3_beginner}}', '{{mach3_inter}}', '{{mach3_novice}}', '{{mach3_expert}}']
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        scales: {
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+</script>
+<!-- **********************next machine ******************************  -->
+<div class="box-card">
+    <div class="charts">
+        <h2 class="machine_title">Machine 4<a href="{% url 'machine_4' %}"><i class="fa fa-cogs" aria-hidden="true"></i></a></h2>
+        <canvas id="4" width="100" height="100"></canvas>
+    </div>    
+</div>
+<script>
+var ctx = document.getElementById('4').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'horizontalBar',
+    // The data for our dataset
+    data: {
+        labels: ['None', 'Beginner', 'Intermediate', 'Novice', 'Expert'],
+        datasets: [{
+            label: '# of employees',
+            backgroundColor: '#A0D2DB',
+            borderColor: '#A0D2DB',
+            data: [ '{{mach4_none}}' , '{{mach4_beginner}}', '{{mach4_inter}}', '{{mach4_novice}}', '{{mach4_expert}}']
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        scales: {
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+</script>
+<!-- **********************next machine ******************************  -->
+<div class="box-card">
+    <div class="charts">
+        <h2 class="machine_title">Machine 5<a href="{% url 'machine_5' %}"><i class="fa fa-cogs" aria-hidden="true"></i></a></h2>
+        <canvas id="5" width="100" height="100"></canvas>
+    </div>    
+</div>
+<script>
+var ctx = document.getElementById('5').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'horizontalBar',
+    // The data for our dataset
+    data: {
+        labels: ['None', 'Beginner', 'Intermediate', 'Novice', 'Expert'],
+        datasets: [{
+            label: '# of employees',
+            backgroundColor: '#BEE7E8',
+            borderColor: '#BEE7E8',
+            data: [ '{{mach5_none}}' , '{{mach5_beginner}}', '{{mach5_inter}}', '{{mach5_novice}}', '{{mach5_expert}}']
+        }]
+    },
+
+    // Configuration options go here
+    options: {
+        scales: {
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+</script>
+<!-- **********************next machine ******************************  -->
+    </div>
+
+{% endblock content %}

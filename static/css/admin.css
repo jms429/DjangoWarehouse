@@ -1,0 +1,34 @@
+:root{
+    --mainColor: #636f83;
+  --mainHover: #8a93a2;
+  --secondaryColor: #ebedef;
+}
+#header{
+    background-color: var(--mainColor);
+    color: #fff;
+
+}
+
+div.breadcrumbs{
+    background-color: var(--mainColor);
+}
+
+#branding img{
+    padding: 0 5px;   
+}
+
+#branding h1 a:visited, #branding h1 {
+    color: #fff;
+}
+
+#changelist-filter h2, .module caption {
+    background-color: var(--mainColor);
+}
+
+#nav-sidebar .current-model{
+    background: #e5e5e5;
+}
+
+a:link, a:visited {
+    color: var(--mainColor);
+}

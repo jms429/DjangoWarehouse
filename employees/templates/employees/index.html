@@ -1,0 +1,120 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+
+<!-- css for calendar  -->
+<link rel="stylesheet" href="static/css/calendar.css">
+
+{% load static %} 
+
+
+
+<div class="container">
+   <div class="calendar light">
+      <div class="calendar_header">
+        <h1 class = "header_title">Welcome Back</h1>
+        <p class="header_copy">Certification Calendar</p>
+      </div>
+      <div class="calendar_plan">
+        <div class="cl_plan">
+          <div class="cl_title">Today</div>
+          <div class="cl_copy">{{time}}</div>
+          <div class="cl_add"><i class="fas fa-plus"></i>
+          </div>
+        </div>
+      </div>
+      <div class="calendar_events">
+        <p class="ce_title">Upcoming Events</p>
+        {% for event in upcoming %}
+          <div class="event_item">
+            <div class="ei_Dot dot_active"></div>
+            <div class="ei_Title">{{ event.date }}</div>
+            <div class="ei_Copy">{{ event.name }} - {{ event.event_type }}</div>
+          </div>
+        {% endfor %}
+        
+        
+      </div>
+    </div>
+    <div class="box-card6">
+      <header><h2>Super Search <i class="fa fa-eye" aria-hidden="true"></i></h2>
+      <br></header>
+      <form action="{% url 'search' %}" method="get">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Keywords</span>
+          </div>
+          <input type="text" class="form-control" name="keywords">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Machine 1</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name="Machine_1">
+            <option disabled="disabled" selected>Choose...</option>
+            <option value="0">None</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Machine 2</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name="Machine_2">
+            <option disabled="disabled" selected>Choose...</option>
+            <option value="0">None</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Machine 3</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name="Machine_3">
+            <option disabled="disabled" selected>Choose...</option>
+            <option value="0">None</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Machine 4</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name="Machine_4">
+            <option disabled="disabled" selected>Choose...</option>
+            <option value="0">None</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Machine 5</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name="Machine_5">
+            <option disabled="disabled" selected>Choose...</option>
+            <option value="0">None</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-light float-right">Submit</button>
+      </form>
+    </div>
+</div>
+
+ 
+{% endblock content %}

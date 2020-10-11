@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <!-- chart.js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+    <!-- my js  -->
+    <script src="static/js/main.js"></script>
+    <!-- my css  -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- jquery ui (autocomplete)  -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- BootStrap 4.3.1  -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+  <!-- Topbar  -->
+
+  {% include 'partials/_topbar.html' %}
+
+  <div class="wrapper">
+    <!-- Sidebar -->
+
+    {% include 'partials/_sidebar.html' %}
+
+    <!-- Main-Content  -->
+
+    {% block content %}{% endblock content %}
+
+  </div>
+
+  <!-- js, cdns, and add ons  -->
+
+  {% include 'partials/_addons.html' %}
+
+</body>
+
+</html>

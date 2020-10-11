@@ -1,0 +1,43 @@
+<nav id="sidebar" >
+    <div class="sidebar-header">
+      <h1>
+        <i class="fa fa-magnet" aria-hidden="true"></i> 
+      </h1>
+      <h3>Sheet Metal Inc. </h3>
+    </div>
+    <form action="{% url 'search' %}" class="form-inline ml-2">
+      <input class="form-control mr-sm-2" name="keywords" id="search" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-light my-2 my-sm-0"  type="submit"><i class="fas fa-search"></i></button>
+    </form>
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a href="{% url 'index' %}" ><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+      </li>
+      <li>
+        <a href="{% url 'employees' %}"><i class="fas fa-user-friends"></i>Employees</a>
+      </li>
+      <li>
+        <a href="{% url 'machines' %}"><i class="fa fa-wrench" aria-hidden="true"></i>Machines</a>
+      </li>
+      <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-calendar" aria-hidden="true"></i>Calendar</a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+            <a href="{% url 'calendar' %}">Main</a>
+          </li>
+          <li>
+            <a href="#">Week</a>
+          </li>
+          <li>
+            <a href="#">Scheduler</a>
+          </li>
+        </ul>
+      </li> 
+      {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'admin:index' %}"><i class="fas fa-cog"></i>Administrative</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+

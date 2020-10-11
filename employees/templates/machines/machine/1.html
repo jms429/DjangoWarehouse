@@ -1,0 +1,25 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<div class="container">
+    <h2 class="machine_title">Machine 1<i class="fa fa-cogs" aria-hidden="true"></i></h2>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Machine Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in ltg %}
+            <tr>
+                <td>{{employee.full_name}}</td>
+                <td>{{employee.machine_1}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
