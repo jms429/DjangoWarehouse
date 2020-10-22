@@ -1,0 +1,73 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<div class="container-fluid">
+    {% for departments in data %}
+        <h2 class="m-4">{{departments.name}}</h2>
+        <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                        data-target="#collapseOne{{departments.id}}" aria-expanded="true" aria-controls="collapseOne">
+                        Level 1
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseOne{{departments.id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    {{departments.level_1}}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo{{departments.id}}" aria-expanded="false" aria-controls="collapseTwo">
+                        Level 2
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo{{departments.id}}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    {{departments.level_2}}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree{{departments.id}}" aria-expanded="false" aria-controls="collapseThree">
+                        Level 3
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree{{departments.id}}" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    {{departments.level_3}}
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseFour{{departments.id}}" aria-expanded="false" aria-controls="collapseFour">
+                        Level 4
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFour{{departments.id}}" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                    {{departments.level_4}}
+                </div>
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

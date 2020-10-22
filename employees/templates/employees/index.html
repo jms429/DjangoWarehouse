@@ -6,21 +6,18 @@
 <link rel="stylesheet" href="static/css/calendar.css">
 
 {% load static %} 
-
-
-
 <div class="container">
    <div class="calendar light">
       <div class="calendar_header">
         <h1 class = "header_title">Welcome Back</h1>
-        <p class="header_copy">Certification Calendar</p>
+        <p class="header_copy">Dashboard and Calendar</p>
       </div>
       <div class="calendar_plan">
         <div class="cl_plan">
           <div class="cl_title">Today</div>
           <div class="cl_copy">{{time}}</div>
-          <div class="cl_add"><i class="fas fa-plus"></i>
-          </div>
+          <div class="cl_title">You have <strong>{{employee_count}}</strong> active employees</div>
+          <div class="cl_title">You have <strong>{{event_count}}</strong> upcoming events</div>
         </div>
       </div>
       <div class="calendar_events">
@@ -32,13 +29,13 @@
             <div class="ei_Copy">{{ event.name }} - {{ event.event_type }}</div>
           </div>
         {% endfor %}
-        
-        
       </div>
     </div>
     <div class="box-card6">
-      <header><h2>Super Search <i class="fa fa-eye" aria-hidden="true"></i></h2>
-      <br></header>
+      <div class="calendar_header">
+        <h1 class = "header_title">Super Search</h1>
+        <p class="header_copy"></p>
+      </div>
       <form action="{% url 'search' %}" method="get">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -48,11 +45,16 @@
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Machine 1</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01" name="Machine_1">
-            <option disabled="disabled" selected>Choose...</option>
-            <option value="0">None</option>
+          <select class="custom-select" id="inputGroupSelect01" name="quality">
+            <option disabled="disabled" selected>Quality</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+          <select class="custom-select" id="inputGroupSelect01" name="engineering">
+            <option disabled="disabled" selected>Engineering</option>
             <option value="1">Beginner</option>
             <option value="2">Intermediate</option>
             <option value="3">Novice</option>
@@ -61,11 +63,16 @@
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Machine 2</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01" name="Machine_2">
-            <option disabled="disabled" selected>Choose...</option>
-            <option value="0">None</option>
+          <select class="custom-select" id="inputGroupSelect01" name="press_brake">
+            <option disabled="disabled" selected>Press Brake</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+          <select class="custom-select" id="inputGroupSelect01" name="laser">
+            <option disabled="disabled" selected>Laser</option>
             <option value="1">Beginner</option>
             <option value="2">Intermediate</option>
             <option value="3">Novice</option>
@@ -74,11 +81,16 @@
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Machine 3</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01" name="Machine_3">
-            <option disabled="disabled" selected>Choose...</option>
-            <option value="0">None</option>
+          <select class="custom-select" id="inputGroupSelect01" name="water_jet">
+            <option disabled="disabled" selected>Water Jet</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+          <select class="custom-select" id="inputGroupSelect01" name="cnc_mill">
+            <option disabled="disabled" selected>CNC Mill</option>
             <option value="1">Beginner</option>
             <option value="2">Intermediate</option>
             <option value="3">Novice</option>
@@ -87,11 +99,16 @@
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Machine 4</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01" name="Machine_4">
-            <option disabled="disabled" selected>Choose...</option>
-            <option value="0">None</option>
+          <select class="custom-select" id="inputGroupSelect01" name="cnc_lathe">
+            <option disabled="disabled" selected>CNC Lathe</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+          <select class="custom-select" id="inputGroupSelect01" name="stamp">
+            <option disabled="disabled" selected>Stamp</option>
             <option value="1">Beginner</option>
             <option value="2">Intermediate</option>
             <option value="3">Novice</option>
@@ -100,11 +117,70 @@
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Machine 5</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01" name="Machine_5">
-            <option disabled="disabled" selected>Choose...</option>
-            <option value="0">None</option>
+          <select class="custom-select" id="inputGroupSelect01" name="drill">
+            <option disabled="disabled" selected>Drill</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+          <select class="custom-select" id="inputGroupSelect01" name="shipping">
+            <option disabled="disabled" selected>Shipping</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name="powder_coat">
+            <option disabled="disabled" selected>Powder Coat</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+          <select class="custom-select" id="inputGroupSelect01" name="epoxy">
+            <option disabled="disabled" selected>Epoxy</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name="weld">
+            <option disabled="disabled" selected>Weld</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+          <select class="custom-select" id="inputGroupSelect01" name="robot_weld">
+            <option disabled="disabled" selected>Robot Weld</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" name="assembly">
+            <option disabled="disabled" selected>Assembly</option>
+            <option value="1">Beginner</option>
+            <option value="2">Intermediate</option>
+            <option value="3">Novice</option>
+            <option value="4">Expert</option>
+          </select>
+          <select class="custom-select" id="inputGroupSelect01" name="fuse">
+            <option disabled="disabled" selected>Fuse</option>
             <option value="1">Beginner</option>
             <option value="2">Intermediate</option>
             <option value="3">Novice</option>
@@ -113,6 +189,9 @@
         </div>
         <button type="submit" class="btn btn-light float-right">Submit</button>
       </form>
+      <a href="{% url 'index' %}">
+        <button class="btn btn-light float-right mx-2">Reset</button>
+      </a>
     </div>
 </div>
 

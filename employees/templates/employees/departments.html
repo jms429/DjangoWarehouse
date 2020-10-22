@@ -1,0 +1,119 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+
+{% load static %}    
+    <!-- body sections  -->
+    
+    <div class="container">
+        {% for departments in departments %}
+        <div class="box-card">
+            <div class="charts">
+                <h2 class="machine_title">{{departments.name}}
+                    {% if forloop.counter == 1 %}
+                        <a href="{% url 'quality' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 2 %}
+                            <a href="{% url 'engineering' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 3 %}
+                            <a href="{% url 'press_brake' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 4 %}
+                            <a href="{% url 'laser' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 5 %}
+                            <a href="{% url 'water_jet' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 6 %}
+                            <a href="{% url 'cnc_mill' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 7 %}
+                            <a href="{% url 'cnc_lathe' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 8 %}
+                            <a href="{% url 'stamp' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 9 %}
+                            <a href="{% url 'drill' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 10 %}
+                            <a href="{% url 'shipping' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 11 %}
+                            <a href="{% url 'powder_coat' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 12 %}
+                            <a href="{% url 'epoxy' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 13 %}
+                            <a href="{% url 'weld' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 14 %}
+                            <a href="{% url 'robot_weld' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 15 %}
+                            <a href="{% url 'assembly' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 16 %}
+                            <a href="{% url 'fuse' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                    {% endif %}
+                </h2>
+                <canvas id="{{ forloop.counter }}" width="100" height="100"></canvas>
+                <script>
+                    var counter = '{{forloop.counter}}'
+                    var active_list = []
+                    if (counter == 1) {
+                        active_list = ['{{none_1}}', '{{beg_1}}', '{{int_1}}', '{{nov_1}}', '{{exp_1}}']
+                    } else if (counter == 2) {
+                        active_list = ['{{none_2}}', '{{beg_2}}', '{{int_2}}', '{{nov_2}}', '{{exp_2}}']
+                    } else if (counter == 3) {
+                        active_list = ['{{none_3}}', '{{beg_3}}', '{{int_3}}', '{{nov_3}}', '{{exp_3}}']
+                    } else if (counter == 4) {
+                        active_list = ['{{none_4}}', '{{beg_4}}', '{{int_4}}', '{{nov_4}}', '{{exp_4}}']
+                    } else if (counter == 5) {
+                        active_list = ['{{none_5}}', '{{beg_5}}', '{{int_5}}', '{{nov_5}}', '{{exp_5}}']
+                    } else if (counter == 6) {
+                        active_list = ['{{none_6}}', '{{beg_6}}', '{{int_6}}', '{{nov_6}}', '{{exp_6}}']
+                    } else if (counter == 7) {
+                        active_list = ['{{none_7}}', '{{beg_7}}', '{{int_7}}', '{{nov_7}}', '{{exp_7}}']
+                    } else if (counter == 8) {
+                        active_list = ['{{none_8}}', '{{beg_8}}', '{{int_8}}', '{{nov_8}}', '{{exp_8}}']
+                    } else if (counter == 9) {
+                        active_list = ['{{none_9}}', '{{beg_9}}', '{{int_9}}', '{{nov_9}}', '{{exp_9}}']
+                    } else if (counter == 10) {
+                        active_list = ['{{none_10}}', '{{beg_10}}', '{{int_10}}', '{{nov_10}}', '{{exp_10}}']
+                    } else if (counter == 11) {
+                        active_list = ['{{none_11}}', '{{beg_11}}', '{{int_11}}', '{{nov_11}}', '{{exp_11}}']
+                    } else if (counter == 12) {
+                        active_list = ['{{none_12}}', '{{beg_12}}', '{{int_12}}', '{{nov_12}}', '{{exp_12}}']
+                    } else if (counter == 13) {
+                        active_list = ['{{none_13}}', '{{beg_13}}', '{{int_13}}', '{{nov_13}}', '{{exp_13}}']
+                    } else if (counter == 14) {
+                        active_list = ['{{none_14}}', '{{beg_14}}', '{{int_14}}', '{{nov_14}}', '{{exp_14}}']
+                    } else if (counter == 15) {
+                        active_list = ['{{none_15}}', '{{beg_15}}', '{{int_15}}', '{{nov_15}}', '{{exp_15}}']
+                    } else if (counter == 16) {
+                        active_list = ['{{none_16}}', '{{beg_16}}', '{{int_16}}', '{{nov_16}}', '{{exp_16}}']
+                    }
+                    var ctx = document.getElementById('{{forloop.counter}}').getContext('2d');
+                    var chart = new Chart(ctx, {
+                        // The type of chart we want to create
+                        type: 'horizontalBar',
+                        // The data for our dataset
+                        data: {
+                            labels: ['None', 'Beginner', 'Interm', 'Novice', 'Expert'],
+                            datasets: [{
+                                Label: 'Data',
+                                backgroundColor: ['#636f83', '#636482', '#638280', '#6D6382', '#637982'],
+                                data: active_list
+                            }]
+                        },
+
+                        // Configuration options go here
+                        options: {
+                            legend: {
+                                display: false,
+                            },
+                            scales: {
+                                xAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    
+
+{% endblock content %}

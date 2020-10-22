@@ -89,6 +89,7 @@
   padding: 10px;
   font-size: 1.1em;
   display: block;
+  color: #fff;
 }
 
 #sidebar ul li a i {
@@ -98,6 +99,7 @@
 #sidebar ul li a:hover {
   color: var(--mainColor);
   background: var(--mainHover);
+  text-decoration: none;
 }
 
 #sidebar ul li a:visited,
@@ -139,12 +141,25 @@ a[data-toggle="collapse"] {
   #sidebar.active {
     margin-left: 0;
   }
+  #search{
+    width: 200px;
+    margin: 5px;
+  }
 }
 
 .box-card {
   background: #fff;
   border-radius: 15px;
   height: 350px;
+  width: 300px;
+  margin: 10px;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.box-cardtall{
+  background: #fff;
+  border-radius: 15px;
+  height: 650px;
   width: 300px;
   margin: 10px;
   box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
@@ -166,19 +181,10 @@ a[data-toggle="collapse"] {
   margin-bottom: 30px;
 }
 
-.machine_title i {
-  margin: 13px;
-  color: var(--mainColor);
-}
-.machine_title i:hover {
-  color: var(--mainHover);
-}
-
 .imgs > img {
   position: absolute;
   width: 100px;
   height: 100px;
-  z-index: 1;
   border-radius: 50%;
   margin-left: 80px;
   margin-top: 80px;
@@ -193,6 +199,8 @@ a[data-toggle="collapse"] {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  max-width: 850px;
+  margin: auto;
 }
 
 .chart-key p {

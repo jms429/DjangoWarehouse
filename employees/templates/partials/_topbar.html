@@ -10,18 +10,9 @@
   {% if user.is_authenticated %}
     <div class="dropdown">
       <span>
-        Weclome, Josh Frederick <i class="fas fa-caret-down"></i>
+        Welcome! Admin is logged in. 
       </span>
-      <div class="dropdown-content">
-        <p>
-          <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
-        </p>
-        <p>
-          <a href="#"><i class="fas fa-sign-out-alt"></i> Sign-out</a>
-        </p>
-      </div>
-    </div>
-    <img src="static/photos/bruce-campbell.jpg" class="rounded-circle mx-4 " height="40" alt="...">
+  
   {% else %}
     <div class="dropdown">
       <a href="{% url 'admin:index' %}">Admin Login   </a>

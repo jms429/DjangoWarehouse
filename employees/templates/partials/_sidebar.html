@@ -10,28 +10,17 @@
       <button class="btn btn-light my-2 my-sm-0"  type="submit"><i class="fas fa-search"></i></button>
     </form>
     <ul class="list-unstyled components">
-      <li class="active">
+      <li>
         <a href="{% url 'index' %}" ><i class="fas fa-tachometer-alt"></i>Dashboard</a>
       </li>
       <li>
         <a href="{% url 'employees' %}"><i class="fas fa-user-friends"></i>Employees</a>
       </li>
       <li>
-        <a href="{% url 'machines' %}"><i class="fa fa-wrench" aria-hidden="true"></i>Machines</a>
+        <a href="{% url 'departments' %}"><i class="fas fa-building"></i>Departments</a>
       </li>
       <li>
-        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-calendar" aria-hidden="true"></i>Calendar</a>
-        <ul class="collapse list-unstyled" id="pageSubmenu">
-          <li>
-            <a href="{% url 'calendar' %}">Main</a>
-          </li>
-          <li>
-            <a href="#">Week</a>
-          </li>
-          <li>
-            <a href="#">Scheduler</a>
-          </li>
-        </ul>
+        <a href="{% url 'reference' %}"><i class="fa fa-book" aria-hidden="true"></i>Reference</a>
       </li> 
       {% if user.is_authenticated %}
         <li>
