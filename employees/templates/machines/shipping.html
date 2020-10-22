@@ -4,19 +4,19 @@
 
 {% load static %}
 <div class="container">
-    <h2 class="machine_title">Machine 3<i class="fa fa-cogs" aria-hidden="true"></i></h2>
+    <h2 class="machine_title">Shipping</h2>
     <table class="table">
         <thead class="thead-light">
             <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Machine Level</th>
+                <th scope="col">Skill level</th>
             </tr>
         </thead>
         <tbody>
-            {% for employee in ltg %}
+            {% for employee in data %}
             <tr>
                 <td>{{employee.full_name}}</td>
-                <td>{{employee.machine_3}}</td>
+                <td>{{employee.shipping}}</td>
             </tr>
             {% endfor %}
         </tbody>

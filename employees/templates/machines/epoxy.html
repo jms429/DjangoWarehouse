@@ -1,0 +1,25 @@
+{% extends 'employees/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<div class="container">
+    <h2 class="machine_title">Epoxy</h2>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Skill level</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in data %}
+            <tr>
+                <td>{{employee.full_name}}</td>
+                <td>{{employee.Epoxy}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

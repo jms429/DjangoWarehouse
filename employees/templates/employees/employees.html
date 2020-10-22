@@ -7,11 +7,9 @@
     <div class="container">
         <div class="box-card12">
             <div class="chart-key">
-                    <p><i class="fa fa-square" style="color:#594157;" aria-hidden="true"></i> Machine 1</p>
-                    <p><i class="fa fa-square" style="color:#726DA8;" aria-hidden="true"></i> Machine 2</p>
-                    <p><i class="fa fa-square" style="color:#7D8CC4;" aria-hidden="true"></i> Machine 3</p>
-                    <p><i class="fa fa-square" style="color:#A0D2DB;" aria-hidden="true"></i> Machine 4</p>
-                    <p><i class="fa fa-square" style="color:#BEE7E8;" aria-hidden="true"></i> Machine 5</p>
+                    {% for departments in departments %}
+                    <p><i class="fa fa-square" style="color: {{departments.color_hex}};" aria-hidden="true"></i> {{ departments.name }}</p>
+                    {% endfor %}
             </div>
         </div>
         {% for employee in employee %}
@@ -28,17 +26,27 @@
             var myChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Machine 1', 'Machine 2', 'Machine 3', 'Machine 4', 'Machine 5'],
+                    labels: ['Quality', 'Engineering', 'Press Brake', 'Laser', 'Water Jet','CNC Mill', 'CNC Lathe', 'Stamp', 'Drill', 'Shipping', 'Powder Coat', 'Epoxy', 'Weld', 'Robot Weld', 'Assembly', 'Fuse'],
                     datasets: [{
                         label: '# of Votes',
-                        data: ['{{ employee.machine_1 }}','{{ employee.machine_2 }}','{{ employee.machine_3 }}','{{ employee.machine_4 }}', '{{ employee.machine_5 }}'],
+                        data: ['{{ employee.quality }}','{{ employee.engineering }}','{{ employee.press_brake }}','{{ employee.laser }}', '{{ employee.water_jet }}', '{{ employee.cnc_mill }}','{{ employee.cnc_lathe }}','{{ employee.stamp }}','{{ employee.drill }}', '{{ employee.shipping }}', '{{ employee.powder_coat }}','{{ employee.epoxy }}','{{ employee.weld }}', '{{ employee.robot_weld }}', '{{ employee.assembly }}','{{ employee.fuse }}'],
                         backgroundColor: [
-                            '#594157',
-                            '#726DA8',
-                            '#7D8CC4',
-                            '#A0D2DB',
-                            '#BEE7E8',
-
+                            '#0496FF',
+                            '#586F7C',
+                            '#B8DBD9',
+                            '#FFDD4A',
+                            '#0077B6',
+                            '#AF5D63',
+                            '#ED474A',
+                            '#8DB38B',
+                            '#AC80A0',
+                            '#96E6B3',
+                            '#B88B4A',
+                            '#463239',
+                            '#E4C5AF',
+                            '#7FB800',
+                            '#8C2155',
+                            '#A7BBEC'
                         ],
                         borderColor: [
                            
@@ -52,8 +60,8 @@
                     },
                     tooltips: {
                         mode: 'point'
+                        }
                     }
-                }
             });
         </script>
         {% empty %}

@@ -14,12 +14,24 @@ class Employee(models.Model):
 
     full_name = models.CharField(max_length=50)
     is_active = models.BooleanField(default=True)
-    machine_1 = models.IntegerField(choices=Level.choices, default=Level.NONE)
-    machine_2 = models.IntegerField(choices=Level.choices, default=Level.NONE)
-    machine_3 = models.IntegerField(choices=Level.choices, default=Level.NONE)
-    machine_4 = models.IntegerField(choices=Level.choices, default=Level.NONE)
-    machine_5 = models.IntegerField(choices=Level.choices, default=Level.NONE)
     photo = models.ImageField(upload_to='static/photos/', default='static/photos/default-photo.png')
+    quality = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    engineering = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    press_brake = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    laser = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    water_jet = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    cnc_mill = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    cnc_lathe = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    stamp = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    drill = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    shipping = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    powder_coat = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    epoxy = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    weld = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    robot_weld = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    assembly = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    fuse = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    
     #sets name of admin table
     def __str__(self):
         return self.full_name  
@@ -46,5 +58,16 @@ class Event(models.Model):
         default= CERT,
     )
          
+class Department(models.Model):
 
+    name = models.CharField(max_length=50)
+    description = models.TextField(max_length=200)
+    color_hex = models.CharField(max_length=7, blank=True)
+    icon_url = models.CharField(max_length=60, blank=True)
+    level_1 = models.TextField(max_length=1500, blank=True)
+    level_2 = models.TextField(max_length=1500, blank=True)
+    level_3 = models.TextField(max_length=1500, blank=True)
+    level_4 = models.TextField(max_length=1500, blank=True)
 
+    def __str__(self):
+        return self.name
