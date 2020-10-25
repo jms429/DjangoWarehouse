@@ -1,7 +1,8 @@
+{% load static %} 
 <nav id="sidebar" >
     <div class="sidebar-header">
       <div class="logomonti">
-        <img src="" alt="logo">
+        <img src="{% static 'photos/montilogopngWhite.png' %}" height="80" width="200" alt="logo">
       </div>
     </div>
     <form action="{% url 'search' %}" class="form-inline ml-2">
