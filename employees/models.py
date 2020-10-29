@@ -39,24 +39,12 @@ class Employee(models.Model):
 
 class Event(models.Model):
 
-    CERT = 'Certification'
-    TIME = 'Time off'
-
-    Event_Type_Choices = [
-        (CERT , 'Certification'),
-        (TIME , 'Scheduled time off'),
-    ]
-
     name = models.ForeignKey(
         Employee,
         on_delete=models.CASCADE,
         verbose_name="Employee name",)
     date = models.DateField()
-    event_type = models.CharField(
-        max_length=50,
-        choices=Event_Type_Choices,
-        default= CERT,
-    )
+    event_type = models.CharField(max_length=20, blank=True)
          
 class Department(models.Model):
 
