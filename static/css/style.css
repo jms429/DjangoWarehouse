@@ -219,3 +219,17 @@ a[data-toggle="collapse"] {
   box-shadow: 0px 0px 35px -16px rgba(0,0,0,0.75);
   padding: 20px 30px;
 }
+
+.box-card12 .pagination .page-item .page-link, .box-card12 .pagination .page_item .page-link { 
+  color: #636f83;
+}
+
+.box-card12 .pagination .page_item_disabled .page-link { 
+  color: #8a93a2;
+}
+
+.box-card12 .pagination .page-item.active .page-link {  
+  background-color: #636f83;
+  color: #fff;
+  border: 0;
+}

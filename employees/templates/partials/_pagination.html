@@ -5,9 +5,9 @@
             <a href="?page={{employee.previous_page_number}}" class="page-link">&laquo;</a>
         </li>
     {% else %}
-    <li class="page_item_disabled">
-        <a class="page-link">&laquo;</a>
-    </li>
+        <li class="page_item_disabled">
+            <a class="page-link">&laquo;</a>
+        </li>
     {% endif %}
     {% for i in employee.paginator.page_range %}
         {% if employee.number == i %}
@@ -25,9 +25,9 @@
             <a href="?page={{employee.next_page_number}}" class="page-link">&raquo;</a>
         </li>
     {% else %}
-    <li class="page_item_disabled">
-        <a class="page-link">&raquo;</a>
-    </li>
+        <li class="page_item_disabled">
+            <a class="page-link">&raquo;</a>
+        </li>
     {% endif %}
 </ul>
 {% endif %}
