@@ -1,25 +1,60 @@
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"
+></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"
+></script>
+
 <!-- This script has to be here for the hamburger  -->
 
 <script>
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-        });
-
+  $(document).ready(function () {
+    $("#sidebarCollapse").on("click", function () {
+      $("#sidebar").toggleClass("active");
     });
+  });
 </script>
 
-  <!-- script for auto complete  -->
-  <script>
-    $(function () {
-      $("#search").autocomplete({
-        source: '{% url 'employees' %}'
-      });
+<!-- script for auto complete  -->
+<script>
+  $(function () {
+    $("#search").autocomplete({
+      source: '{% url 'employees' %}'
     });
-  </script>
+  });
+</script>
+
+<script>
+  const checkbox = document.getElementById("checkbox");
+  const toggle = document.getElementById("mystyle");
+
+  checkbox.addEventListener("change", () => {
+    //this adds the dark class to the apporpriate div for dark mode
+    toggle.href.toggle("static/css/styledark.css")
+  });
+</script>
+
+<!-- This script is for the dark mode  -->
+<script>
+  var myStyleSheet = document.getElementById('mystyle')
+var light = document.getElementById('light')
+var dark = document.getElementById('dark')
+
+
+function swapStyle(sheet) {
+  myStyleSheet.href = sheet
+  localStorage.setItem('theme', sheet)
+  //currentActive.classList.remove('activeMode')
+}
+</script>

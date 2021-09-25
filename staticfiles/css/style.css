@@ -2,51 +2,41 @@
   --mainColor: #636f83;
   --mainHover: #8a93a2;
   --secondaryColor: #ebedef;
+  --background: #e5e5e5;
+  --text: #343b47;
   --Chart1: #f9b115;
   --Chart2: #2eb85c;
   --Chart3: #e55353;
   --Chart4: #3399ff;
+  --cards: #fff;
 }
 
 /* NAVBAR  */
 
 .navbar {
-  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
   position: fixed;
+  display: flex;
+  background: var(--background);
+  color: var(--text);
+  justify-content: end !important;
+  align-items: flex-end !important;
 }
 
-.brand{
-  color: var(--maincolor);
-  font-size: larger;
-  font-weight: 700;
-  text-decoration: none;
-  margin-right: auto;
-  margin-left: 8px;
+.navbar div {
+  padding: 0 0.5rem;
+}
+.hamburger{
+  /* margin-top: 2.5rem; */
+  margin-left: 18.75rem;
+  border: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: var(--mainColor);
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+.hamburger i{
+  color: #fff;
 }
-
-.dropdown > a {
-  color: var(--mainColor);
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--secondaryColor);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 
 /* SIDEBAR  */
 .wrapper .container {
@@ -66,11 +56,13 @@
   min-width: 300px;
   max-width: 300px;
   min-height: 100vh;
-  background-image: linear-gradient(-222deg, var(--mainColor), var(--mainHover));
+  background-image: linear-gradient(-222deg,var(--mainColor), var(--mainHover));
   color: #fff;
+  box-shadow: 0px 0px 35px -16px rgba(0,0,0,0.75);
   transition: all 0.3s;
+  margin-top: -2.5rem;
+  z-index: 2;
 }
-
 #sidebar .sidebar-header {
   padding: 20px;
   margin: 20px auto;
@@ -94,6 +86,7 @@
   font-size: 1.1em;
   display: block;
   color: #fff;
+  margin-left: 15px;
 }
 
 #sidebar ul li a i {
@@ -126,6 +119,23 @@ ul ul a {
   margin-left: -300px;
 }
 
+.lightdarkmode{
+  display: flex;
+  align-items: center;
+  margin: 0 0 5px 15px;
+  padding: 10px;
+}
+
+.lightdarkmode i {
+  margin-right: 15px;
+}
+
+.lightdarkmode button{
+  border: none;
+  background: none;
+  color: #fff;
+}
+
 a[data-toggle="collapse"] {
   position: relative;
 }
@@ -138,21 +148,112 @@ a[data-toggle="collapse"] {
   transform: translateY(-50%);
 }
 
-@media (max-width: 768px) {
-  #sidebar {
-    margin-left: -300px;
-  }
-  #sidebar.active {
-    margin-left: 0;
-  }
-  #search{
-    width: 200px;
-    margin: 5px;
-  }
+/* calendar */
+
+.calendar{
+  width:370px;
+  box-shadow: 0px 0px 35px -16px rgba(0,0,0,0.75);
+  font-family: 'Roboto', sans-serif;
+  padding: 20px 30px;
+  color: var(--text);
+  display: inline-block;
+  border-radius: 10px;
+  margin: 10px;
+  background: var(--background);
+}
+
+.calendar_header{
+  border-bottom: 2px solid var(--mainColor);
+}
+
+.header_copy{
+  color: 1c2b3b;
+  font-size:20px;
+}
+.calendar_plan{
+  margin:20px 0 40px;
+}
+.cl_plan{
+  width:100%;
+  height: 200px;
+  background-image: linear-gradient(-222deg, var(--mainColor), var(--mainHover));
+  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+  padding:30px;
+  color:#fff;
+}
+
+.cl_copy{
+  font-size:22px;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.cl_add{
+  display: inline-block;
+  width: 40px;
+  height:40px;
+  border-radius:20%;
+  background-color: #fff;
+  cursor: pointer;
+  margin:0 0 0 35px;
+  color: var(--text);
+  padding: 9px 13px;
+}
+.calendar_events{
+  color: var(--text);
+}
+.ce_title{
+  font-size:14px;
+}
+
+.event_item{
+  margin: 18px 0;
+  padding:5px;
+  cursor: pointer;
+
+}
+
+.event_item:hover{
+  background-image: linear-gradient(-222deg, var(--mainColor), var(--mainHover));
+  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+  
+}
+
+.ei_Dot:hover{
+  background-color: #fff;
+}
+.ei_Copy:hover,.ei_Title:hover{
+  color:#fff;
+}
+
+.ei_Dot,.ei_Title{
+  display:inline-block;
+}
+
+.ei_Dot{
+  border-radius:50%;
+  width:10px;
+  height: 10px;
+  background-color: var(--text);
+  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+}
+.dot_active{
+  background-color: var(--Chart2);
+}
+
+.ei_Title{
+  margin-left:10px;
+  color: var(--text);
+}
+
+.ei_Copy{
+  font-size:12px;
+  margin-left:27px;
 }
 
 .box-card {
-  background: #fff;
+  background:var(--cards);
+  color: var(--text);
   border-radius: 15px;
   height: 350px;
   width: 300px;
@@ -160,8 +261,12 @@ a[data-toggle="collapse"] {
   box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
 }
 
+.box-card a {
+  color: var(--text);
+}
+
 .box-cardtall{
-  background: #fff;
+  background: var(--cards);
   border-radius: 15px;
   height: 650px;
   width: 300px;
@@ -169,7 +274,20 @@ a[data-toggle="collapse"] {
   box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
 }
 
+.box-card6{
+  width: auto;
+  color: #fff;
+  max-width: 800px;
+  height: 800px;
+  margin: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(-222deg, var(--mainColor), var(--mainHover));
+  box-shadow: 0px 0px 35px -16px rgba(0,0,0,0.75);
+  padding: 20px 30px;
+}
+
 .box-card12 {
+  color: var(--text);
   width: 100%;
 }
 
@@ -200,8 +318,8 @@ a[data-toggle="collapse"] {
   position: relative;
 }
 
-.charts a {
-  color: var(--mainColor);
+.chart-key p {
+  margin: 10px;
 }
 
 .imgs > img {
@@ -213,8 +331,9 @@ a[data-toggle="collapse"] {
   margin-top: 80px;
   object-fit: cover;
 }
-.nofound {
-  margin-top: 50px;
+
+.charts a {
+  color: var(--text);
 }
 
 .chart-key {
@@ -226,20 +345,27 @@ a[data-toggle="collapse"] {
   margin: auto;
 }
 
-.chart-key p {
-  margin: 10px;
+
+.nofound {
+  margin-top: 50px;
 }
 
 
-.box-card6{
-  width: auto;
-  color: #fff;
-  max-width: 800px;
-  height: 800px;
-  margin: 10px;
-  border-radius: 10px;
-  background-image: linear-gradient(-222deg, var(--mainColor), var(--mainHover));
-  box-shadow: 0px 0px 35px -16px rgba(0,0,0,0.75);
-  padding: 20px 30px;
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -300px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #search{
+    width: 200px;
+    margin: 5px;
+  }
+
+  .hamburger{
+    display: block;
+  }
 }
+
 

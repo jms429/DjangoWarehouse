@@ -1,18 +1,9 @@
 <nav class="navbar">
-  <div id="content">
-    <nav class="hamburger">
-      <button type="button" id="sidebarCollapse" class="btn btn-light">
-        <i class="fas fa-align-left"></i>
-      </button>
-    </nav>
-  </div>
-  <a class="brand" href="{% url 'index' %}"></a>
   {% if user.is_authenticated %}
     <div class="dropdown">
       <span>
         Welcome! Admin is logged in. 
       </span>
-  
   {% else %}
     <div class="dropdown">
       <a href="{% url 'admin:index' %}"><i class="fas fa-sign-in-alt"></i> Admin Login  </a>

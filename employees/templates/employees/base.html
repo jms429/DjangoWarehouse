@@ -10,7 +10,7 @@
     <!-- my js  -->
     <script src="static/js/main.js"></script>
     <!-- my css  -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link id="mystyle" rel="stylesheet" href="static/css/style.css">
     <!-- jquery ui (autocomplete)  -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- BootStrap 4.3.1  -->
@@ -18,7 +18,8 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-  <!-- Topbar  -->
+  <div id="darkToggle">
+    <!-- Topbar  -->
 
   {% include 'partials/_topbar.html' %}
 
@@ -29,6 +30,7 @@
 
     <!-- Main-Content  -->
 
+
     {% block content %}{% endblock content %}
 
   </div>
@@ -36,6 +38,8 @@
   <!-- js, cdns, and add ons  -->
 
   {% include 'partials/_addons.html' %}
+  </div>
+  
 
 </body>
 
