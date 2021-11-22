@@ -26,10 +26,10 @@
             var myChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Quality', 'Engineering', 'Press Brake', 'Laser', 'Water Jet','CNC Mill', 'CNC Lathe', 'Stamp', 'Drill', 'Shipping', 'Powder Coat', 'Epoxy', 'Weld', 'Robot Weld', 'Assembly', 'Fuse'],
+                    labels: ['Quality', 'Engineering', 'Press Brake', 'Laser', 'Water Jet','CNC Mill', 'CNC Lathe', 'Stamp', 'Drill', 'Shipping', 'Powder Coat', 'Epoxy', 'Weld', 'Robot Weld', 'Assembly', 'Fuse', 'Saw', 'Maintenace', 'J/U Channel'],
                     datasets: [{
                         label: '# of Votes',
-                        data: ['{{ employee.quality }}','{{ employee.engineering }}','{{ employee.press_brake }}','{{ employee.laser }}', '{{ employee.water_jet }}', '{{ employee.cnc_mill }}','{{ employee.cnc_lathe }}','{{ employee.stamp }}','{{ employee.drill }}', '{{ employee.shipping }}', '{{ employee.powder_coat }}','{{ employee.epoxy }}','{{ employee.weld }}', '{{ employee.robot_weld }}', '{{ employee.assembly }}','{{ employee.fuse }}'],
+                        data: ['{{ employee.quality }}','{{ employee.engineering }}','{{ employee.press_brake }}','{{ employee.laser }}', '{{ employee.water_jet }}', '{{ employee.cnc_mill }}','{{ employee.cnc_lathe }}','{{ employee.stamp }}','{{ employee.drill }}', '{{ employee.shipping }}', '{{ employee.powder_coat }}','{{ employee.epoxy }}','{{ employee.weld }}', '{{ employee.robot_weld }}', '{{ employee.assembly }}','{{ employee.fuse }}','{{ employee.saw }}','{{ employee.maintenance }}','{{ employee.ju_channel }}'],
                         backgroundColor: [
                             '#0496FF',
                             '#586F7C',
@@ -46,7 +46,10 @@
                             '#E4C5AF',
                             '#7FB800',
                             '#8C2155',
-                            '#A7BBEC'
+                            '#A7BBEC',
+                            '#8C2155',
+                            '#8C2155',
+                            '#8C2155'
                         ],
                         borderColor: [
                            

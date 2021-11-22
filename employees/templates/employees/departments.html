@@ -42,7 +42,13 @@
                             <a href="{% url 'assembly' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
                         {% elif forloop.counter == 16 %}
                             <a href="{% url 'fuse' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
-                    {% endif %}
+                        {% elif forloop.counter == 17 %}
+                            <a href="{% url 'saw' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 18 %}
+                            <a href="{% url 'maintenance' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% elif forloop.counter == 19 %}
+                            <a href="{% url 'ju_channel' %}"><i class="fa fa-cogs" style="color: {{departments.color_hex}}" aria-hidden="true"></i></a>
+                        {% endif %}
                 </h2>
                 <canvas id="{{ forloop.counter }}" width="100" height="100"></canvas>
                 <script>
@@ -80,7 +86,13 @@
                         active_list = ['{{none_15}}', '{{beg_15}}', '{{int_15}}', '{{nov_15}}', '{{exp_15}}']
                     } else if (counter == 16) {
                         active_list = ['{{none_16}}', '{{beg_16}}', '{{int_16}}', '{{nov_16}}', '{{exp_16}}']
-                    }
+                    } else if (counter == 17) {
+                        active_list = ['{{none_17}}', '{{beg_17}}', '{{int_17}}', '{{nov_17}}', '{{exp_17}}']
+                    } else if (counter == 18) {
+                        active_list = ['{{none_18}}', '{{beg_18}}', '{{int_18}}', '{{nov_18}}', '{{exp_18}}']
+                    } else if (counter == 19) {
+                        active_list = ['{{none_19}}', '{{beg_19}}', '{{int_19}}', '{{nov_19}}', '{{exp_19}}']
+                    } 
                     var ctx = document.getElementById('{{forloop.counter}}').getContext('2d');
                     var chart = new Chart(ctx, {
                         // The type of chart we want to create

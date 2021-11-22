@@ -28,4 +28,7 @@ urlpatterns = [
     path('robot_weld', views.robot_weld, name='robot_weld'),
     path('assembly', views.assembly, name='assembly'),
     path('fuse', views.fuse, name='fuse'),
+    path('saw', views.saw, name='saw'),
+    path('maintenance', views.maintenance, name='maintenance'),
+    path('ju_channel', views.ju_channel, name='ju_channel'),
 ]

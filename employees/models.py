@@ -31,6 +31,9 @@ class Employee(models.Model):
     robot_weld = models.IntegerField(choices=Level.choices, default=Level.NONE)
     assembly = models.IntegerField(choices=Level.choices, default=Level.NONE)
     fuse = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    saw = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    maintenance = models.IntegerField(choices=Level.choices, default=Level.NONE)
+    ju_channel = models.IntegerField(choices=Level.choices, default=Level.NONE)
     
     #sets name of admin table
     def __str__(self):

@@ -162,6 +162,24 @@ def departments(request):
     int_16 = Employee.objects.filter(fuse__contains=2).count()
     nov_16 = Employee.objects.filter(fuse__contains=3).count()
     exp_16 = Employee.objects.filter(fuse__contains=4).count()
+    #saw
+    none_17 = Employee.objects.filter(saw__contains=0).count()
+    beg_17 = Employee.objects.filter(saw__contains=1).count()
+    int_17 = Employee.objects.filter(saw__contains=2).count()
+    nov_17 = Employee.objects.filter(saw__contains=3).count()
+    exp_17 = Employee.objects.filter(saw__contains=4).count()
+    #maintenance
+    none_18 = Employee.objects.filter(maintenance__contains=0).count()
+    beg_18 = Employee.objects.filter(maintenance__contains=1).count()
+    int_18 = Employee.objects.filter(maintenance__contains=2).count()
+    nov_18 = Employee.objects.filter(maintenance__contains=3).count()
+    exp_18 = Employee.objects.filter(maintenance__contains=4).count()
+     #ju_channel
+    none_19 = Employee.objects.filter(ju_channel__contains=0).count()
+    beg_19 = Employee.objects.filter(ju_channel__contains=1).count()
+    int_19 = Employee.objects.filter(ju_channel__contains=2).count()
+    nov_19 = Employee.objects.filter(ju_channel__contains=3).count()
+    exp_19 = Employee.objects.filter(ju_channel__contains=4).count()
     
     context = {
         # Quality
@@ -261,6 +279,24 @@ def departments(request):
         'int_16': int_16,
         'nov_16': nov_16,
         'exp_16': exp_16,
+        #saw
+        'none_17': none_17,
+        'beg_17': beg_17,
+        'int_17': int_17,
+        'nov_17': nov_17,
+        'exp_17': exp_17,
+        #maint
+        'none_18': none_18,
+        'beg_18': beg_18,
+        'int_18': int_18,
+        'nov_18': nov_18,
+        'exp_18': exp_18,
+        #j/u Channel
+        'none_19': none_19,
+        'beg_19': beg_19,
+        'int_19': int_19,
+        'nov_19': nov_19,
+        'exp_19': exp_19,
     }
 
     return render(request, 'employees/departments.html', context)
@@ -366,6 +402,21 @@ def search(request):
         fuse = request.GET['fuse']
         if fuse:
             queryset_list = queryset_list.filter(fuse__gte=fuse)
+
+    if 'saw' in request.GET:
+        saw = request.GET['saw']
+        if saw:
+            queryset_list = queryset_list.filter(saw__gte=saw)
+    
+    if 'maintenance' in request.GET:
+        maintenance = request.GET['maintenance']
+        if maintenance:
+            queryset_list = queryset_list.filter(maintenance__gte=maintenance)
+
+    if 'ju_channel' in request.GET:
+        ju_channel = request.GET['ju_channel']
+        if ju_channel:
+            queryset_list = queryset_list.filter(ju_channel__gte=ju_channel)
 
 
 
@@ -490,3 +541,24 @@ def fuse(request):
         'data': data,
     }
     return render(request, 'machines/fuse.html', context)
+
+def saw(request):
+    data = Employee.objects.all().order_by('-saw')
+    context = {
+        'data': data,
+    }
+    return render(request, 'machines/saw.html', context)
+
+def maintenance(request):
+    data = Employee.objects.all().order_by('-maintenance')
+    context = {
+        'data': data,
+    }
+    return render(request, 'machines/maintenance.html', context)
+
+def ju_channel(request):
+    data = Employee.objects.all().order_by('-ju_channel')
+    context = {
+        'data': data,
+    }
+    return render(request, 'machines/ju_channel.html', context)
