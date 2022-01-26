@@ -65,7 +65,7 @@ def reference(request):
 
 def departments(request):
 
-    departments = Department.objects.all()
+    departments = Department.objects.all().order_by('id')
     # Quality
     none_1 = Employee.objects.filter(quality__contains=0).count()
     beg_1 = Employee.objects.filter(quality__contains=1).count()
